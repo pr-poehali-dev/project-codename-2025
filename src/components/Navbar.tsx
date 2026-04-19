@@ -15,7 +15,7 @@ const Navbar = ({ mobileMenuOpen, setMobileMenuOpen }: NavbarProps) => {
             <PenLine className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
           </div>
           <div>
-            <h1 className="text-lg sm:text-xl font-bold text-white">Литера</h1>
+            <h1 className="text-lg sm:text-xl font-bold text-white">БукЛайн</h1>
             <p className="text-xs text-[#b9bbbe] hidden sm:block">Платформа для начинающих писателей</p>
           </div>
         </div>

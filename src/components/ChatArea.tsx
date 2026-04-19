@@ -49,16 +49,16 @@ const ChatArea = ({ setMobileSidebarOpen }: ChatAreaProps) => {
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-baseline gap-2 mb-1">
-              <span className="text-white font-medium text-sm sm:text-base">Литера</span>
+              <span className="text-white font-medium text-sm sm:text-base">БукЛайн</span>
               <span className="text-[#72767d] text-xs hidden sm:inline">Сегодня в 10:00</span>
               <span className="bg-[#5865f2] text-white text-xs px-1.5 py-0.5 rounded font-medium">Бот</span>
             </div>
             <div className="text-[#dcddde] text-sm sm:text-base">
               <p className="mb-3 sm:mb-4">
-                <strong>Добро пожаловать в Литеру!</strong> Здесь начинающие писатели пишут, публикуют и находят своих первых читателей.
+                <strong>Добро пожаловать в БукЛайн!</strong> Здесь начинающие писатели пишут, публикуют и находят своих первых читателей.
               </p>
               <div className="bg-[#2f3136] border-l-4 border-[#5865f2] p-3 sm:p-4 rounded">
-                <h3 className="text-white font-semibold mb-2 text-sm sm:text-base">Что умеет Литера:</h3>
+                <h3 className="text-white font-semibold mb-2 text-sm sm:text-base">Что умеет БукЛайн:</h3>
                 <ul className="space-y-1 text-xs sm:text-sm text-[#b9bbbe]">
                   <li>📝 Удобный редактор для написания книг и рассказов</li>
                   <li>📚 Публикация и продвижение произведений</li>
@@ -149,7 +149,7 @@ const ChatArea = ({ setMobileSidebarOpen }: ChatAreaProps) => {
                     </div>
 
                     <div className="flex-1 min-w-0">
-                      <div className="text-white font-semibold text-xs sm:text-sm mb-1">Литера</div>
+                      <div className="text-white font-semibold text-xs sm:text-sm mb-1">БукЛайн</div>
                       <div className="text-[#dcddde] text-xs sm:text-sm mb-1">«Осколки неба» — Глава 3</div>
                       <div className="text-[#b9bbbe] text-xs sm:text-sm mb-2">Фэнтези • 12 340 слов</div>
                       <div className="flex items-center gap-2">
@@ -248,7 +248,7 @@ const ChatArea = ({ setMobileSidebarOpen }: ChatAreaProps) => {
         {/* Статистика */}
         <div className="bg-[#2f3136] rounded-xl p-4 sm:p-6">
           <h3 className="text-white font-semibold text-base sm:text-lg mb-4 sm:mb-6 text-center">
-            Литера в цифрах
+            БукЛайн в цифрах
           </h3>
           <div className="grid grid-cols-3 gap-3 sm:gap-4">
             {[
@@ -358,7 +358,7 @@ const ChatArea = ({ setMobileSidebarOpen }: ChatAreaProps) => {
             {[
               {
                 q: "Нужен ли опыт для публикации?",
-                a: "Нет, Литера создана специально для начинающих авторов. Публикуй смело — сообщество поддержит.",
+                a: "Нет, БукЛайн создана специально для начинающих авторов. Публикуй смело — сообщество поддержит.",
               },
               {
                 q: "Мои тексты защищены авторским правом?",
@@ -381,9 +381,9 @@ const ChatArea = ({ setMobileSidebarOpen }: ChatAreaProps) => {
         <div className="text-center py-6 sm:py-8 text-[#72767d] text-xs sm:text-sm border-t border-[#40444b]">
           <div className="flex items-center justify-center gap-2 mb-2">
             <PenLine className="w-4 h-4 text-[#5865f2]" />
-            <span className="text-white font-medium">Литера</span>
+            <span className="text-white font-medium">БукЛайн</span>
           </div>
-          <p>© 2024 Литера. Платформа для начинающих писателей.</p>
+          <p>© 2024 БукЛайн. Платформа для начинающих писателей.</p>
           <div className="flex justify-center gap-4 mt-3">
             <span className="hover:text-[#dcddde] cursor-pointer">Условия</span>
             <span className="hover:text-[#dcddde] cursor-pointer">Конфиденциальность</span>
