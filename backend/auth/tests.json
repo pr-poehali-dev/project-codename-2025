@@ -1,0 +1,44 @@
+{
+  "tests": [
+    {
+      "name": "Регистрация нового пользователя",
+      "method": "POST",
+      "path": "/",
+      "body": {"action": "register", "email": "writer_test@bookline.ru", "password": "secret123", "name": "Тест Писатель"},
+      "expectedStatus": 200,
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Повторная регистрация того же email",
+      "method": "POST",
+      "path": "/",
+      "body": {"action": "register", "email": "writer_test@bookline.ru", "password": "secret123"},
+      "expectedStatus": 409,
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Вход с верными данными",
+      "method": "POST",
+      "path": "/",
+      "body": {"action": "login", "email": "writer_test@bookline.ru", "password": "secret123"},
+      "expectedStatus": 200,
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Вход с неверным паролем",
+      "method": "POST",
+      "path": "/",
+      "body": {"action": "login", "email": "writer_test@bookline.ru", "password": "wrongpass"},
+      "expectedStatus": 401,
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Слишком короткий пароль",
+      "method": "POST",
+      "path": "/",
+      "body": {"action": "register", "email": "x@x.ru", "password": "123"},
+      "expectedStatus": 400,
+      "bodyMatcher": "partial"
+    }
+  ]
+}

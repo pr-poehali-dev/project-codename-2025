@@ -1,0 +1,19 @@
+{
+  "tests": [
+    {
+      "name": "Запрос без сессии",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 401,
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Запрос с невалидной сессией",
+      "method": "GET",
+      "path": "/",
+      "headers": {"X-Session-Id": "invalid_session_000"},
+      "expectedStatus": 401,
+      "bodyMatcher": "partial"
+    }
+  ]
+}

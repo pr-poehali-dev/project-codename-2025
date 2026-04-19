@@ -1,5 +1,6 @@
 import { ArrowRight, Hash, Mic, Settings, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 interface ChannelSidebarProps {
   mobileSidebarOpen: boolean;
@@ -7,6 +8,7 @@ interface ChannelSidebarProps {
 }
 
 const ChannelSidebar = ({ mobileSidebarOpen, setMobileSidebarOpen }: ChannelSidebarProps) => {
+  const navigate = useNavigate();
   return (
     <div
       className={`${mobileSidebarOpen ? "block" : "hidden"} lg:block w-full lg:w-60 bg-[#2f3136] flex flex-col`}
@@ -28,13 +30,19 @@ const ChannelSidebar = ({ mobileSidebarOpen, setMobileSidebarOpen }: ChannelSide
             <span>Разделы</span>
           </div>
           <div className="mt-1 space-y-0.5">
-            {["черновики", "публикации", "конкурсы", "помощь"].map((channel) => (
+            {[
+              { name: "черновики", onClick: () => navigate("/drafts") },
+              { name: "публикации", onClick: () => {} },
+              { name: "конкурсы", onClick: () => {} },
+              { name: "помощь", onClick: () => {} },
+            ].map((channel) => (
               <div
-                key={channel}
+                key={channel.name}
+                onClick={channel.onClick}
                 className="flex items-center gap-1.5 px-2 py-1 rounded text-[#8e9297] hover:text-[#dcddde] hover:bg-[#393c43] cursor-pointer"
               >
                 <Hash className="w-4 h-4" />
-                <span className="text-sm">{channel}</span>
+                <span className="text-sm">{channel.name}</span>
               </div>
             ))}
           </div>
