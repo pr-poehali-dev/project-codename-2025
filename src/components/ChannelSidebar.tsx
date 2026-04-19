@@ -12,7 +12,7 @@ const ChannelSidebar = ({ mobileSidebarOpen, setMobileSidebarOpen }: ChannelSide
       className={`${mobileSidebarOpen ? "block" : "hidden"} lg:block w-full lg:w-60 bg-[#2f3136] flex flex-col`}
     >
       <div className="p-4 border-b border-[#202225] flex items-center justify-between">
-        <h2 className="text-white font-semibold text-base">Сообщество Литера</h2>
+        <h2 className="text-white font-semibold text-base">Сообщество БукЛайн</h2>
         <Button
           variant="ghost"
           className="lg:hidden text-[#b9bbbe] hover:text-white hover:bg-[#40444b] p-1"
