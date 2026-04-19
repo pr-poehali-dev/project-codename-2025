@@ -15,9 +15,10 @@ import { Button } from "@/components/ui/button";
 
 interface ChatAreaProps {
   setMobileSidebarOpen: (open: boolean) => void;
+  onSignupClick: () => void;
 }
 
-const ChatArea = ({ setMobileSidebarOpen }: ChatAreaProps) => {
+const ChatArea = ({ setMobileSidebarOpen, onSignupClick }: ChatAreaProps) => {
   return (
     <div className="flex-1 flex flex-col">
       {/* Заголовок чата */}
@@ -204,7 +205,7 @@ const ChatArea = ({ setMobileSidebarOpen }: ChatAreaProps) => {
             Присоединяйся к тысячам начинающих авторов. Пиши, публикуй и находи своих первых поклонников.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button className="bg-white text-[#5865f2] hover:bg-[#f2f3f5] px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base">
+            <Button onClick={onSignupClick} className="bg-white text-[#5865f2] hover:bg-[#f2f3f5] px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base">
               Начать писать бесплатно
             </Button>
             <Button
@@ -342,6 +343,7 @@ const ChatArea = ({ setMobileSidebarOpen }: ChatAreaProps) => {
                   ))}
                 </ul>
                 <Button
+                  onClick={onSignupClick}
                   className={`w-full py-2 rounded font-medium text-sm ${plan.highlight ? "bg-white text-[#5865f2] hover:bg-[#f2f3f5]" : "bg-[#5865f2] hover:bg-[#4752c4] text-white"}`}
                 >
                   {plan.cta}

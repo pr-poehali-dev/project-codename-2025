@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "name": "Регистрация с корректным email",
+      "method": "POST",
+      "path": "/",
+      "body": {"email": "test_bookline_new@example.com", "name": "Тест"},
+      "expectedStatus": 200
+    },
+    {
+      "name": "Повторная регистрация того же email",
+      "method": "POST",
+      "path": "/",
+      "body": {"email": "test_bookline@example.com"},
+      "expectedStatus": 409,
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Пустой email",
+      "method": "POST",
+      "path": "/",
+      "body": {"email": ""},
+      "expectedStatus": 400,
+      "bodyMatcher": "partial"
+    }
+  ]
+}

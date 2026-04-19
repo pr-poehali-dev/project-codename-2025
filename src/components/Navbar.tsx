@@ -4,9 +4,10 @@ import { Button } from "@/components/ui/button";
 interface NavbarProps {
   mobileMenuOpen: boolean;
   setMobileMenuOpen: (open: boolean) => void;
+  onSignupClick: () => void;
 }
 
-const Navbar = ({ mobileMenuOpen, setMobileMenuOpen }: NavbarProps) => {
+const Navbar = ({ mobileMenuOpen, setMobileMenuOpen, onSignupClick }: NavbarProps) => {
   return (
     <nav className="bg-[#2f3136] border-b border-[#202225] px-4 sm:px-6 py-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -24,7 +25,10 @@ const Navbar = ({ mobileMenuOpen, setMobileMenuOpen }: NavbarProps) => {
             <Star className="w-4 h-4 mr-2" />
             Истории
           </Button>
-          <Button className="bg-[#5865f2] hover:bg-[#4752c4] text-white px-6 py-2 rounded text-sm font-medium">
+          <Button
+            onClick={onSignupClick}
+            className="bg-[#5865f2] hover:bg-[#4752c4] text-white px-6 py-2 rounded text-sm font-medium"
+          >
             Начать писать
           </Button>
         </div>
@@ -44,7 +48,10 @@ const Navbar = ({ mobileMenuOpen, setMobileMenuOpen }: NavbarProps) => {
               <Star className="w-4 h-4 mr-2" />
               Истории
             </Button>
-            <Button className="bg-[#5865f2] hover:bg-[#4752c4] text-white px-6 py-2 rounded text-sm font-medium">
+            <Button
+              onClick={onSignupClick}
+              className="bg-[#5865f2] hover:bg-[#4752c4] text-white px-6 py-2 rounded text-sm font-medium"
+            >
               Начать писать
             </Button>
           </div>

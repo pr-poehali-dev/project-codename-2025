@@ -4,17 +4,22 @@ import Navbar from "@/components/Navbar";
 import ChannelSidebar from "@/components/ChannelSidebar";
 import ChatArea from "@/components/ChatArea";
 import MembersPanel from "@/components/MembersPanel";
+import SignupModal from "@/components/SignupModal";
 
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+  const [signupOpen, setSignupOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-[#36393f] text-white overflow-x-hidden">
-      <Navbar mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
+      <Navbar
+        mobileMenuOpen={mobileMenuOpen}
+        setMobileMenuOpen={setMobileMenuOpen}
+        onSignupClick={() => setSignupOpen(true)}
+      />
 
       <div className="flex min-h-screen">
-        {/* Боковая панель серверов */}
         <div className="hidden lg:flex w-[72px] bg-[#202225] flex-col items-center py-3 gap-2">
           <div className="w-12 h-12 bg-[#5865f2] rounded-2xl hover:rounded-xl transition-all duration-200 flex items-center justify-center cursor-pointer">
             <PenLine className="w-6 h-6 text-white" />
@@ -35,10 +40,15 @@ const Index = () => {
             mobileSidebarOpen={mobileSidebarOpen}
             setMobileSidebarOpen={setMobileSidebarOpen}
           />
-          <ChatArea setMobileSidebarOpen={setMobileSidebarOpen} />
+          <ChatArea
+            setMobileSidebarOpen={setMobileSidebarOpen}
+            onSignupClick={() => setSignupOpen(true)}
+          />
           <MembersPanel />
         </div>
       </div>
+
+      <SignupModal open={signupOpen} onClose={() => setSignupOpen(false)} />
     </div>
   );
 };
